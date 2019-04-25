@@ -55,8 +55,10 @@ public class ViewUploadsActivity extends AppCompatActivity {
 //                intent.setData(Uri.parse(upload.getUrl()));
 //                startActivity(intent);
 
-                Intent homeIntent = new Intent(ViewUploadsActivity.this,Pdfview.class);
-                homeIntent.setData(Uri.parse(upload.getUrl()));
+                Intent homeIntent = new Intent(ViewUploadsActivity.this,ViewPdfActivity.class);
+//                homeIntent.setData(Uri.parse(upload.getUrl()));
+                String url="url";
+                homeIntent.putExtra(url,upload.getUrl());
                 startActivity(homeIntent);
 //                finish();
             }
