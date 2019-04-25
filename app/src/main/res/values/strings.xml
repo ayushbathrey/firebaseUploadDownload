@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">pdfuploadanddownlad</string>
+
+    <string name="title_activity_pdfview">Pdfview</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="ViewPDF">View PDF/</string>
+</resources>
