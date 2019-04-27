@@ -57,10 +57,13 @@ public class ViewUploadsActivity extends AppCompatActivity {
 
                 Intent homeIntent = new Intent(ViewUploadsActivity.this,ViewPdfActivity.class);
 //                homeIntent.setData(Uri.parse(upload.getUrl()));
-                String url="url";
-                homeIntent.putExtra(url,upload.getUrl());
-                startActivity(homeIntent);
+//                String url="url";
+//                homeIntent.putExtra(url,upload);
+//                startActivity(homeIntent);
 //                finish();
+//                Intent intent = new Intent(getBaseContext(),ViewUploadsActivity.class);
+                homeIntent.putExtra("URL",upload.getUrl());
+                startActivity(homeIntent);
             }
         });
         //getting the database reference
@@ -88,7 +91,7 @@ public class ViewUploadsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Toast.makeText(ViewUploadsActivity.this, "Upload Cancelled", Toast.LENGTH_SHORT).show();
             }
         });
     }

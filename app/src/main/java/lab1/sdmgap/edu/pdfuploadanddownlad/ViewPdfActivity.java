@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,10 +44,14 @@ public class ViewPdfActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value = dataSnapshot.getValue(String.class);
-                pdfName.setText(value);
-                Toast.makeText(ViewPdfActivity.this, "Updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewPdfActivity.this, "Updated:"+value, Toast.LENGTH_LONG).show();
+                Log.d("GetingUrlFrmFirebseDB",value);
                 String url = pdfName.getText().toString();
-                new RetrivePdfStream().execute(url);
+                String sessionURL= getIntent().getStringExtra("URL");
+                pdfName.setText(sessionURL);
+                Log.d("url",url);
+                Log.d("sessionURL",sessionURL);
+                new RetrivePdfStream().execute(sessionURL);
             }
 
             @Override
